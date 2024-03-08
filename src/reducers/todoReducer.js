@@ -1,7 +1,11 @@
 import { ADD_TODO,EDIT_TODO,REMOVE_TODO } from "../constants/index";
+  const intialTodos = [
+    
+      {  id : '1' ,title:'todo_1'} ,
+      { id : '2' ,title:'todo_2'}
+  ]
 
-
-function todoReducer(todos = [] , action)
+function todoReducer(todos = intialTodos  , action)
 {
     if(action.type === ADD_TODO)
     {
@@ -10,7 +14,7 @@ function todoReducer(todos = [] , action)
 
         ]
 
-    }
+    } 
     if(action.type === EDIT_TODO)
     {
         return todos.filter (eachTodo => eachTodo.id != action.payload);
@@ -30,4 +34,7 @@ function todoReducer(todos = [] , action)
         }); 
         
     }
+
+    return todos;
 }
+export default todoReducer;
