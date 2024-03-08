@@ -5,7 +5,7 @@ import { ADD_TODO,EDIT_TODO,REMOVE_TODO } from "../constants/index";
       { id : '2' ,title:'todo_2'}
   ]
 
-function todoReducer(todos = intialTodos  , action)
+function todoReducer  (todos = []  , action)
 {
     if(action.type === ADD_TODO)
     {
@@ -15,12 +15,12 @@ function todoReducer(todos = intialTodos  , action)
         ]
 
     } 
-    if(action.type === EDIT_TODO)
+    if(action.type === REMOVE_TODO)
     {
         return todos.filter (eachTodo => eachTodo.id != action.payload);
         
     }
-    if(action.type === REMOVE_TODO)
+    if(action.type === EDIT_TODO)
     {
 
         return todos.map((eachTodo) => 
@@ -34,7 +34,7 @@ function todoReducer(todos = intialTodos  , action)
         }); 
         
     }
-
+// default state
     return todos;
 }
 export default todoReducer;

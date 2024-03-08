@@ -7,7 +7,7 @@ const addTodo = (todo) => ({
     payload : todo
  });
 
- const removeTodo = (todo) => ({
+ const removeTodo = (todoId) => ({
     type:REMOVE_TODO ,
     payload : todoId
  });
@@ -17,5 +17,7 @@ const addTodo = (todo) => ({
     type:   EDIT_TODO ,
     payload : todo
  });
+
+ export {addTodo ,removeTodo,editTodo};
 
   

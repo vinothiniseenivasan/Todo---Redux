@@ -1,6 +1,7 @@
-// for acceesing store
+  // for acceesing store
 import { useSelector } from "react-redux";
 import Todo from '../Todo/Todo'
+import TodoInput from "../TodoInput/TodoInput";
 
 
 function TodoList()
@@ -11,7 +12,13 @@ function TodoList()
 
 
     return  (
-        todoList &&  todoList.map(    (eachTodo)  =>  <Todo    title = {eachTodo.title}   id = {eachTodo.id}  />) 
+        <>
+           <TodoInput />
+          { todoList &&  todoList.map( 
+            (eachTodo)  =>  <Todo    title = {eachTodo.title}   id = {eachTodo.id}  />
+           ) }
+         </>
+       
     )
 
 }
