@@ -3,9 +3,11 @@ import { useSelector } from "react-redux";
 import Todo from '../Todo/Todo'
 import TodoInput from "../TodoInput/TodoInput";
 
-
 function TodoList()
 {
+
+
+   
 //    useSelector is used to acess spcific state
     const todoList = useSelector(  (state) =>   state.todos );
 
@@ -20,7 +22,7 @@ function TodoList()
          </>
        
     )
-
+ 
 }
 
 export default TodoList;
